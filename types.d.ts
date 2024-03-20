@@ -47,6 +47,7 @@ export interface RagegunResult {
     perma?: PERMAAnalysis;
     emolex_all_languages?: EmoLexEmotions;
     emolex_english?: EmoLexEmotions;
+    sentence_words?: string[][];
 }
 
 export function analyze(
