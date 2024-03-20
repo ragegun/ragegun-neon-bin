@@ -1,6 +1,6 @@
 {
   "name": "ragegun",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Text analysis",
   "main": "index.js",
   "types": "types.d.ts",

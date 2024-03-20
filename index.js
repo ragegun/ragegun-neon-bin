@@ -7,7 +7,7 @@ const arch = os.arch();
 const platform = os.platform();
 
 const loadNativeModule = filePath => {
-    const expobj = {exports: {}};
+    const expobj = { exports: {} };
 
     try {
         process.dlopen(expobj, path.join(__dirname, filePath));
@@ -41,9 +41,12 @@ const ragegun_native = (() => {
 })();
 
 module.exports = {
-    analyze: async text => {
-        return ragegun_native.analyze(
-            text,
-        );
-    },
+    analyze: async text =>
+        ragegun_native
+            .analyze(
+                text,
+            )
+            .then(result =>
+                JSON.parse(result),
+            ),
 };
