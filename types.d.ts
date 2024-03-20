@@ -49,6 +49,6 @@ export interface RagegunResult {
     emolex_english?: EmoLexEmotions;
 }
 
-export function analysis(
+export function analyze(
     text: string,
 ): Promise<RagegunResult>;
