@@ -40,6 +40,32 @@ export interface EmoLexEmotions {
     trust: EmolexInterpretation;
 }
 
+export enum AffectionInterpretation {
+    Low = 'Low',
+    Moderate = 'Moderate',
+    Neutral = 'Neutral',
+    High = 'High',
+    VeryHigh = 'VeryHigh',
+    Unknown = 'Unknown',
+}
+
+export interface AffectionAnalysis {
+    affection: AffectionInterpretation;
+    intensity: AffectionInterpretation;
+}
+
+export enum TemporalOrientationInterpretation {
+    Likely = 'Likely',
+    Neutral = 'Neutral',
+    Unlikely = 'Unlikely',
+}
+
+export interface TemporalOrientationAnalysis {
+    past: TemporalOrientationInterpretation;
+    present: TemporalOrientationInterpretation;
+    future: TemporalOrientationInterpretation;
+}
+
 export interface RagegunResult {
     age?: number;
     gender?: GenderInterpretation;
@@ -47,6 +73,8 @@ export interface RagegunResult {
     perma?: PERMAAnalysis;
     emolex_all_languages?: EmoLexEmotions;
     emolex_english?: EmoLexEmotions;
+    affection?: AffectionAnalysis;
+    temporal_orientation?: TemporalOrientationAnalysis;
     sentence_words?: string[][];
 }
 
